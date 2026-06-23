@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#6D28D9" />
+    <meta
+      name="description"
+      content="For Soujoud - a dreamy romantic one-page gift made with love by Yahya."
+    />
+    <title>For Soujoud ❤️</title>
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated atmosphere layers stay outside the main content for smooth GPU-friendly motion. -->
+    <div class="sky-glow" aria-hidden="true"></div>
+    <div class="cloud-field" aria-hidden="true">
+      <span class="cloud cloud-one"></span>
+      <span class="cloud cloud-two"></span>
+      <span class="cloud cloud-three"></span>
+      <span class="cloud cloud-four"></span>
+    </div>
+    <div id="ambient-layer" class="ambient-layer" aria-hidden="true"></div>
+    <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Floating music player. It attempts autoplay, then becomes a touch-friendly play button if blocked. -->
+    <aside class="music-widget" aria-label="Music player">
+      <audio id="bg-music" src="assets/music.mp3" loop preload="auto" playsinline></audio>
+      <button id="music-toggle" class="music-toggle" type="button" aria-label="Play music">
+        <span class="music-icon" aria-hidden="true">♪</span>
+      </button>
+      <p class="music-copy">
+        <span id="music-state">Tap to play</span>
+        <strong>Now Playing: Devil In A New Dress ❤️</strong>
+      </p>
+    </aside>
+
+    <main>
+      <!-- Landing section -->
+      <section id="home" class="section hero-section">
+        <div class="hero-content reveal-on-scroll">
+          <p class="eyebrow">For Soujoud ❤️</p>
+          <h1>To My Beautiful Jiji ❤️</h1>
+          <p class="hero-subtitle">Thank you for being in my life, a zayni.</p>
+          <div class="hero-heart" aria-hidden="true">❤️</div>
+          <p class="signature">Made with love by Yahya</p>
+        </div>
+      </section>
+
+      <!-- Letter section -->
+      <section id="letter" class="section section-narrow">
+        <article class="glass-card letter-card reveal-on-scroll">
+          <div class="card-hearts" aria-hidden="true">
+            <span>❤️</span>
+            <span>♡</span>
+            <span>❤️</span>
+          </div>
+          <p class="section-kicker">A Letter For You</p>
+          <h2>My favorite place is wherever your heart is.</h2>
+          <div class="letter-body">
+            <p>
+              Dear Jiji,
+            </p>
+            <p>
+              [I hope you like this little thing I made for you. It's my way of showing 
+               how much I love you.I know for a fact that I mean a lot to you. We've grown
+               very close in such a short time, and by the way, I think that means we both
+               have high emotional intelligence.I hope you enjoyed your trip, and just 
+               know that no matter what happens, I'll always be by your side. 
+               I also hope that one day you'll be my future wife. I love you zayni❤️.]
+            </p>
+            <p>
+              [Looking back at the day we first met fills me with pure joy.
+               I enjoyed every single moment of that kharja, and the day after
+                it is something I'll never forget. Those memories will always 
+                have a special place in my heart. ]
+            </p>
+            <p>
+              Forever grateful for you,
+              <br />
+              Yahya
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Countdown section -->
+      <section id="countdown" class="section">
+        <div class="section-heading reveal-on-scroll">
+          <p class="section-kicker">Our Time</p>
+          <h2>Since June 18, 2026</h2>
+        </div>
+        <div class="countdown-grid reveal-on-scroll" aria-live="polite">
+          <div class="time-card">
+            <strong id="days">0</strong>
+            <span>Days</span>
+          </div>
+          <div class="time-card">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </div>
+          <div class="time-card">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </div>
+          <div class="time-card">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo memories section -->
+      <section id="memories" class="section">
+        <div class="section-heading reveal-on-scroll">
+          <p class="section-kicker">Photo Memories</p>
+          <h2>Ten little windows into us.</h2>
+        </div>
+
+        <div class="gallery-shell reveal-on-scroll">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Previous photo">‹</button>
+          <div id="gallery-frame" class="gallery-frame">
+            <div id="gallery-track" class="gallery-track">
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 1">
+                  <img src="assets/photo1.jpg" alt="Memory placeholder 1" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo1.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 2">
+                  <img src="assets/photo2.jpg" alt="Memory placeholder 2" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo2.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 3">
+                  <img src="assets/photo 3.jpg" alt="Memory placeholder 3" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo3.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 4">
+                  <img src="assets/photo4.jpg" alt="Memory placeholder 4" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo4.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 5">
+                  <img src="assets/photo5.jpg" alt="Memory placeholder 5" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo5.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 6">
+                  <img src="assets/photo6.jpg" alt="Memory placeholder 6" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo6.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 7">
+                  <img src="assets/photo7.jpg" alt="Memory placeholder 7" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo7.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 8">
+                  <img src="assets/photo8.jpg" alt="Memory placeholder 8" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo8.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 9">
+                  <img src="assets/photo9.jpg" alt="Memory placeholder 9" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo9.jpg</figcaption>
+              </figure>
+              <figure class="memory-slide">
+                <button class="memory-tile" type="button" aria-label="Open photo 10">
+                  <img src="assets/photo10.jpg" alt="Memory placeholder 10" loading="lazy" decoding="async" />
+                </button>
+                <figcaption>photo10.jpg</figcaption>
+              </figure>
+            </div>
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Next photo">›</button>
+          <div id="gallery-dots" class="gallery-dots" aria-label="Gallery position"></div>
+        </div>
+      </section>
+
+      <!-- Reasons section -->
+      <section id="reasons" class="section">
+        <div class="section-heading reveal-on-scroll">
+          <p class="section-kicker">Reasons I Love You</p>
+          <h2>Fifteen soft places to add your truth.</h2>
+        </div>
+        <div class="reasons-grid">
+          <article class="reason-card reveal-on-scroll" tabindex="0">The way you respect me and my decisions</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your smile</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your kind heart</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">The way You laugh</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your support</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your intelligence</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your honesty</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your dreams</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your patience</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">You are humble</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">The way you treat me</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your touch</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">Your voice</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">The way you show you love</article>
+          <article class="reason-card reveal-on-scroll" tabindex="0">You are my forever</article>
+        </div>
+      </section>
+
+      <!-- Final interaction section -->
+      <section id="answer" class="section final-section">
+        <div id="proposal-card" class="glass-card proposal-card reveal-on-scroll" data-no-clicks="0">
+          <p class="section-kicker">One Last Question</p>
+          <h2 id="love-question">Do you love me? ❤️</h2>
+          <div id="choice-row" class="choice-row" aria-label="Love answer buttons">
+            <button class="choice-button yes-button" type="button" data-choice="yes">YES ❤️</button>
+            <button id="no-button" class="choice-button no-button" type="button" data-choice="no">NO 😢</button>
+          </div>
+          <p id="yes-message" class="yes-message" hidden>I knew it, Jiji ❤️</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Image lightbox for tapped memories. -->
+    <div id="image-modal" class="image-modal" hidden>
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close photo">×</button>
+      <img id="modal-image" src="" alt="Selected memory" />
+    </div>
+
+    <noscript>
+      <p class="noscript-message">
+        This romantic page needs JavaScript for the countdown, gallery, music controls,
+        and final celebration.
+      </p>
+    </noscript>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
